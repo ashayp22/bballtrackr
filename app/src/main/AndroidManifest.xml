@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlayerStats"></activity>
+        <activity android:name=".TeamStats"></activity>
+        <activity android:name=".PlayerStatsEdit" />
+        <activity android:name=".PlayerStats" />
         <activity android:name=".Players" />
         <activity android:name=".MainActivity">
             <intent-filter>
