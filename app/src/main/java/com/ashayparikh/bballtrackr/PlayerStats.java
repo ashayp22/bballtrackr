@@ -42,7 +42,7 @@ public class PlayerStats extends AppCompatActivity {
         s1.setText("3S: " + threes);
         s2.setText("2S: " + twos);
         s3.setText("Fouls: " + fouls);
-        s4.setText("Assits: " + assists);
+        s4.setText("Assists: " + assists);
         s5.setText("Rebounds: " + rebounds);
 
         //picture.setImageResource(IMAGE);
