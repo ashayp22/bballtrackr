@@ -1,6 +1,7 @@
 package com.ashayparikh.bballtrackr;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.database.Cursor;
 
 import android.content.Intent;
 import android.media.Image;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DatabaseHelper db;
+
     String coachNameT = "Cortez";
     String teamNameT = "Cougars";
 
@@ -20,20 +23,40 @@ public class MainActivity extends AppCompatActivity {
     ImageView teamLogo;
 
     //Arraylist players that will be appended to the players dropdown
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        coachName = (TextView) findViewById(R.id.coachName);
-        teamName = (TextView) findViewById(R.id.teamName);
+        db = new DatabaseHelper(this);
 
-        teamLogo = (ImageView) findViewById(R.id.teamLogo);
+        //clear player data, team stats
+        coachName = (TextView)findViewById(R.id.coachName);
+        teamName = (TextView)findViewById(R.id.teamName);
+
+        teamLogo = (ImageView)findViewById(R.id.teamLogo);
 
         InitViews();
+    }
+
+
+    public void viewAll() {
+        Cursor res = db.getAllData();
+        if(res.getCount() == 0) {
+            //no players
+            return;
+        }
+
+        StringBuffer buffer = new StringBuffer();
+        while (res.moveToNext()) {
+            buffer.append("Name :"+ res.getString(0)+"\n");
+            buffer.append("Number :"+ res.getString(1)+"\n");
+            buffer.append("Points :"+ res.getString(2)+"\n");
+            buffer.append("Assists :"+ res.getString(3)+"\n\n");
+        }
 
     }
+
 
     private void InitViews()
     {
