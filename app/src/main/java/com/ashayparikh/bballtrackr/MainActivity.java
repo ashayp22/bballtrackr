@@ -2,13 +2,70 @@ package com.ashayparikh.bballtrackr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    String coachNameT = "Cortez";
+    String teamNameT = "Cougars";
+
+    TextView coachName, teamName;
+
+    ImageView teamLogo;
+
+    //Arraylist players that will be appended to the players dropdown
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        coachName = (TextView) findViewById(R.id.coachName);
+        teamName = (TextView) findViewById(R.id.teamName);
+
+        teamLogo = (ImageView) findViewById(R.id.teamLogo);
+
+        InitViews();
+
     }
+
+    private void InitViews()
+    {
+        coachName.setText("Coach " + coachNameT);
+        teamName.setText("Team " + teamNameT);
+
+        //teamLogo.setImageResource(IMAGE);
+    }
+
+    public void NewGame(View view)
+    {
+        Intent intent = new Intent(this, Players.class);
+        startActivity(intent);
+
+    }
+
+    public void ViewStats(View view)
+    {
+        Intent intent = new Intent(this, PlayerStats.class);
+        startActivity(intent);
+    }
+
+    public void Teams(View view)
+    {
+        Intent intent = new Intent(this, TeamStats.class);
+        startActivity(intent);
+    }
+
+    public void ManagePlayers(View view)
+    {
+        Intent intent = new Intent(this, PlayerStatsEdit.class);
+        startActivity(intent);
+    }
+
 }
