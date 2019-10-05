@@ -12,7 +12,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "data.db";
     public static final String TABLE_NAME = "team_stats";
 
-    private static final String[] COLS = {"NAME", "NUMBER", "POINTS", "ASSISTS", "REBOUNDS", "STEALS", "BLOCKS", "TURNOVERS", "POINTS"};
+    private static final String[] COLS = {"NAME", "NUMBER", "POINTS", "ASSISTS", "REBOUNDS", "STEALS", "BLOCKS", "TURNOVERS", "MINUTES"};
 
 
     //constructor
