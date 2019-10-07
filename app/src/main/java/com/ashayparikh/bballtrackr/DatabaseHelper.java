@@ -4,6 +4,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -43,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             i++;
         }
         long result = db.insert(TABLE_NAME,null ,contentValues);
+
         if(result == -1)
             return false;
         else
@@ -57,6 +62,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public ArrayList<String> getPlayerNames() {
+        Cursor allData = getAllData();
+
+        ArrayList<String> names = new ArrayList<>();
+
+        while(allData.moveToNext()) {
+            names.add(allData.getString(0));
+        }
+
+        return names;
+    }
+
+    //get the data of a certain player
     public String[] getPlayerData(String playerName) {
         Cursor allData = getAllData();
 

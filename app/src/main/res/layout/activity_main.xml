@@ -12,59 +12,48 @@
         android:layout_width="141dp"
         android:layout_height="81dp"
         android:onClick="NewGame"
-        android:text="New Game"
+        android:text="ADD A GAME"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="141dp"
         android:layout_height="81dp"
         android:onClick="ManagePlayers"
-        android:text="Manage Players"
+        android:text="MANAGE PLAYERS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.933" />
+        app:layout_constraintVertical_bias="0.904" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="141dp"
         android:layout_height="81dp"
         android:onClick="ViewStats"
-        android:text="View Stats"
+        android:text="SEE PLAYER STATS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="141dp"
         android:layout_height="81dp"
         android:onClick="Teams"
-        android:text="Team"
+        android:text="SEE TEAM STATS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
-
-    <ImageView
-        android:id="@+id/teamLogo"
-        android:layout_width="88dp"
-        android:layout_height="89dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        app:layout_constraintVertical_bias="0.764" />
 
     <TextView
         android:id="@+id/coachName"

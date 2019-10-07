@@ -11,6 +11,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
+
+//Game - add stats for the game
+//View Stats - see all the players stats
+//Team - team stats
+//Player Stats Edit - change player stats, remove and add a player
+
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseHelper db;
@@ -19,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
     String teamNameT = "Cougars";
 
     TextView coachName, teamName;
-
-    ImageView teamLogo;
 
     //Arraylist players that will be appended to the players dropdown
     @Override
@@ -33,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         //clear player data, team stats
         coachName = (TextView)findViewById(R.id.coachName);
         teamName = (TextView)findViewById(R.id.teamName);
-
-        teamLogo = (ImageView)findViewById(R.id.teamLogo);
 
         InitViews();
     }
