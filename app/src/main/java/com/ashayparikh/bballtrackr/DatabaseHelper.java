@@ -28,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //implemented methods
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,SURNAME TEXT,MARKS INTEGER)");
+        db.execSQL("create table " + TABLE_NAME +"(NAME TEXT,NUMBER TEXT,POINTS TEXT, ASSISTS TEXT, REBOUNDS TEXT, STEALS TEXT, BLOCKS TEXT, TURNOVERS TEXT, MINUTES TEXT)");
     }
 
     @Override
@@ -47,7 +47,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             i++;
         }
         long result = db.insert(TABLE_NAME,null ,contentValues);
-
         if(result == -1)
             return false;
         else
@@ -82,7 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         while(allData.moveToNext()) {
             if(allData.getString(0).equals(playerName)) { //found the player
-                for(int i =0 ; i < 9; i++) {
+                for(int i = 0 ; i < 9; i++) {
                     s[i] = allData.getString(i);
                 }
             }
@@ -95,7 +94,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] data = getPlayerData(playerName);
 
         for(int i = 2; i < 9; i++) {
-            data[i] = String.valueOf(Integer.parseInt(data[i]) + stats[i-2]);
+            int a = Integer.parseInt(data[i]);
+            int b = stats[i-2];
+            int c = a + b;
+            data[i] = String.valueOf(c);
         }
 
         UpdateTable(data);

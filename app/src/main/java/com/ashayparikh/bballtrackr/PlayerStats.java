@@ -25,10 +25,8 @@ import android.util.Log;
 public class PlayerStats extends AppCompatActivity implements OnItemSelectedListener {
 
 
-    TextView pName, s1, s2, s3, s4, s5;
+    TextView pName, s1, s2, s3, s4, s5, s6, s7;
 
-
-    ImageView picture;
 
     String playername;
 
@@ -49,6 +47,8 @@ public class PlayerStats extends AppCompatActivity implements OnItemSelectedList
         s3 = (TextView) findViewById(R.id.stat3);
         s4 = (TextView) findViewById(R.id.stat4);
         s5 = (TextView) findViewById(R.id.stat5);
+        s6 =(TextView) findViewById(R.id.stat6);
+        s7 = (TextView) findViewById(R.id.stat7);
 
 
         // Spinner element
@@ -63,8 +63,8 @@ public class PlayerStats extends AppCompatActivity implements OnItemSelectedList
 
 //        Log.i("myTag", String.valueOf(names.size()));
 
-        Toast toast = Toast.makeText(getApplicationContext(), String.valueOf(names.size()), Toast.LENGTH_SHORT);
-        toast.show();
+//        Toast toast = Toast.makeText(getApplicationContext(), String.valueOf(names.size()), Toast.LENGTH_SHORT);
+//        toast.show();
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names);
@@ -82,11 +82,13 @@ public class PlayerStats extends AppCompatActivity implements OnItemSelectedList
     {
         pName.setText(playername);
 
-        s1.setText("3S: ");
-        s2.setText("2S: ");
-        s3.setText("Fouls: ");
-        s4.setText("Assists: ");
-        s5.setText("Rebounds: ");
+        s1.setText("POINTS");
+        s2.setText("ASSISTS");
+        s3.setText("REBOUNDS");
+        s4.setText("STEALS");
+        s5.setText("BLOCKS");
+        s6.setText("TURNOVERS");
+        s7.setText("MINUTES");
 
         //picture.setImageResource(IMAGE);
     }
@@ -94,10 +96,25 @@ public class PlayerStats extends AppCompatActivity implements OnItemSelectedList
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
+        String name = parent.getItemAtPosition(position).toString();
+
+        //display stats now
+
+        String[] stats = db.getPlayerData(name);
+
+        pName.setText(name + " #" + stats[1]);
+
+        s1.setText("POINT: " + stats[2]);
+        s2.setText("ASSISTS: " + stats[3]);
+        s3.setText("REBOUNDS: " + stats[4]);
+        s4.setText("STEALS: " + stats[5]);
+        s5.setText("BLOCKS: " + stats[6]);
+        s6.setText("TURNOVERS: " + stats[7]);
+        s7.setText("MINUTES: " + stats[8]);
+
 
         // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+//        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub

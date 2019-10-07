@@ -9,10 +9,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.content.Context;
+import android.util.Log;
 
-import org.w3c.dom.Text;
-
-public class PlayerStatsEdit extends AppCompatActivity {
+public class PlayerStatsEdit extends AppCompatActivity implements OnItemSelectedListener {
 
 
 //    int threes, twos, fouls, assists, rebounds;
@@ -22,6 +32,10 @@ public class PlayerStatsEdit extends AppCompatActivity {
     private EditText name;
     private EditText number;
 
+    private String currentPlayer;
+
+    private Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +43,35 @@ public class PlayerStatsEdit extends AppCompatActivity {
 
         db = new DatabaseHelper(getApplicationContext());
 
-        name = (EditText) findViewById(R.id.number);
+        name = (EditText) findViewById(R.id.name);
         number = (EditText) findViewById(R.id.number);
+
+
+        // Spinner element
+        spinner = (Spinner) findViewById(R.id.spinner);
+
+        // Spinner click listener
+        spinner.setOnItemSelectedListener(this);
+
+        // Spinner Drop down elements
+
+        ArrayList<String> names = db.getPlayerNames();
+
+        if(names.size() != 0) currentPlayer = names.get(0);
+
+//        Log.i("myTag", String.valueOf(names.size()));
+
+//        Toast toast = Toast.makeText(getApplicationContext(), String.valueOf(names.size()), Toast.LENGTH_SHORT);
+//        toast.show();
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
     }
 
     public void AddPlayer(View view) {
@@ -38,38 +79,46 @@ public class PlayerStatsEdit extends AppCompatActivity {
         String n2 = number.getText().toString();
 
         String[] stats = {n, n2, "0", "0", "0", "0", "0", "0", "0"};
-
         db.AddPlayer(stats);
-        Toast toast = Toast.makeText(getApplicationContext(), Boolean.toString(db.AddPlayer(stats)), Toast.LENGTH_SHORT);
-        toast.show();
+
+    //update list of players
+        ArrayList<String> names = db.getPlayerNames();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        currentPlayer = parent.getItemAtPosition(position).toString();
+    }
+
+    public void RemovePlayer(View view) {
+        db.RemovePlayer(currentPlayer);
+
+        //update list of players
+        ArrayList<String> names = db.getPlayerNames();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, names);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+
+    }
+
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
 
 
-
-
-//    public void ButtonClick(View view)
-//    {
-//        switch(view.getId())
-//        {
-//            case R.id.stat__1: twos++; break;
-//            case R.id.stat_1: twos--; break;
-//
-//            case R.id.butPos2: threes++; break;
-//            case R.id.stat_: threes--; break;
-//
-//            case R.id.stat__2: rebounds++; break;
-//            case R.id.stat_2: rebounds--; break;
-//
-//            case R.id.stat__3: fouls++; break;
-//            case R.id.stat_3: fouls--; break;
-//
-//            case R.id.stat__4: assists++; break;
-//            case R.id.stat_4: assists--; break;
-//
-//            //case R.id.nextButton: SWITCH PLAYER; break;
-//
-//        }
-//    }
 
     public void GoBack(View view) {
         Intent intent = new Intent(this, MainActivity.class);

@@ -94,4 +94,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    //adding: better ui (make text in proper spot, change background); clear a persons stats; team stats(number of games, wins, losses)
+
 }
