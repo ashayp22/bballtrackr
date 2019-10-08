@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     tools:context=".Players">
 
     <Button
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="GoBack"
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,91 +25,97 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="143dp"
-        android:layout_marginStart="143dp"
-        android:layout_marginTop="618dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="Update"
         android:text="UPDATE STATS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/t7"
+        app:layout_constraintTop_toBottomOf="@+id/t7" />
 
     <EditText
         android:id="@+id/t7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="565dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="192dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat8"
+        app:layout_constraintTop_toBottomOf="@+id/t6" />
 
     <EditText
         android:id="@+id/t6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="523dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="192dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat"
+        app:layout_constraintTop_toBottomOf="@+id/t5" />
 
     <EditText
         android:id="@+id/t5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="492dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="195dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat5"
+        app:layout_constraintTop_toBottomOf="@+id/t4" />
 
     <EditText
         android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="195dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat1"
+        app:layout_constraintTop_toBottomOf="@+id/playerName" />
 
     <EditText
         android:id="@+id/t2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="192dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat2"
+        app:layout_constraintTop_toBottomOf="@+id/t1" />
 
     <EditText
         android:id="@+id/t3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="192dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat3"
+        app:layout_constraintTop_toBottomOf="@+id/t2" />
 
     <EditText
         android:id="@+id/t4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="446dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="195dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/stat4"
+        app:layout_constraintTop_toBottomOf="@+id/t3" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -119,84 +126,101 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintVertical_bias="0.193" />
 
     <TextView
         android:id="@+id/stat8"
-        android:layout_width="98dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="85dp"
         android:text="MINUTES"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/t7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/stat5" />
 
     <TextView
         android:id="@+id/stat"
-        android:layout_width="140dp"
+        android:layout_width="0dp"
         android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="17dp"
         android:text="TURNOVERS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/t6"
+        app:layout_constraintEnd_toStartOf="@+id/t6"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/stat4"
-        android:layout_width="98dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="453dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="1dp"
         android:text="STEALS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/t4"
+        app:layout_constraintEnd_toStartOf="@+id/t4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/t4" />
 
     <TextView
         android:id="@+id/stat5"
-        android:layout_width="98dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="495dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="28dp"
         android:text="BLOCKS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/stat"
+        app:layout_constraintEnd_toStartOf="@+id/t5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/stat4" />
 
     <TextView
         android:id="@+id/stat2"
-        android:layout_width="98dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="34dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
-        android:layout_marginTop="369dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="40dp"
         android:text="ASSISTS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/t2"
+        app:layout_constraintEnd_toStartOf="@+id/t2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/t2" />
 
     <TextView
         android:id="@+id/stat3"
-        android:layout_width="98dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="411dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="40dp"
         android:text="REBOUNDS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/t3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -206,7 +230,7 @@
         android:layout_height="99dp"
         android:text="ADD GAME STATS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -216,30 +240,32 @@
 
     <TextView
         android:id="@+id/stat1"
-        android:layout_width="98dp"
+        android:layout_width="0dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="373dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="316dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="69dp"
         android:text="POINTS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/stat2"
+        app:layout_constraintEnd_toStartOf="@+id/t1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="42dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="220dp"
+        android:layout_marginEnd="42dp"
         android:fontFamily="casual"
         android:text="Enter the stats of the player for this game"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -250,15 +276,15 @@
         android:id="@+id/playerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="90dp"
         android:fontFamily="casual"
         android:text="Name: "
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintEnd_toEndOf="@+id/t1"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

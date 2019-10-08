@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     tools:context=".PlayerStatsEdit">
 
     <Button
         android:id="@+id/backButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="GoBack"
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
@@ -24,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="AddPlayer"
         android:text="ADD PLAYER"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,38 +36,35 @@
     <Button
         android:id="@+id/removeplayer"
         android:layout_width="184dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="528dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="RemovePlayer"
         android:text="REMOVE PLAYER"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="182dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="82dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="601dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="47dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="ClearStats"
         android:text="CLEAR STATS"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/backButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/removeplayer" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
         android:layout_marginTop="47dp"
+        android:layout_marginEnd="36dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -75,8 +75,8 @@
         android:id="@+id/number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
         android:layout_marginEnd="3dp"
+        android:layout_marginBottom="9dp"
         android:ems="10"
         android:hint="Number"
         android:inputType="textPersonName"
@@ -86,12 +86,13 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="244dp"
-        android:layout_height="72dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="577dp"
+        android:layout_marginBottom="53dp"
+        app:layout_constraintBottom_toTopOf="@+id/removeplayer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title"
@@ -99,7 +100,7 @@
         android:layout_height="113dp"
         android:text="MANAGE PLAYERS"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

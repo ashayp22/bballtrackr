@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
+    android:background="@drawable/background2"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button2"
         android:layout_width="141dp"
         android:layout_height="81dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="NewGame"
         android:text="ADD A GAME"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,19 +23,22 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="141dp"
-        android:layout_height="81dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="214dp"
+        android:backgroundTint="#FFADB1E7"
         android:onClick="ManagePlayers"
         android:text="MANAGE PLAYERS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_bias="0.758" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="141dp"
         android:layout_height="81dp"
+        android:backgroundTint="#ADB1E7"
         android:onClick="ViewStats"
         android:text="SEE PLAYER STATS"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,16 +49,19 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="573dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="95dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="431dp"
         android:fontFamily="casual"
         android:text="BBALL STATS TRACKR"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
