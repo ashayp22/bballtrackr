@@ -41,17 +41,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-    <EditText
-        android:id="@+id/number"
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="9dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Number"
-        app:layout_constraintBottom_toTopOf="@+id/addplayer"
-        app:layout_constraintEnd_toEndOf="@+id/name" />
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="601dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="82dp"
+        android:onClick="ClearStats"
+        android:text="CLEAR STATS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/name"
@@ -64,6 +67,18 @@
         android:text="Name"
         app:layout_constraintEnd_toEndOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="9dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Number"
+        app:layout_constraintBottom_toTopOf="@+id/addplayer"
+        app:layout_constraintEnd_toEndOf="@+id/name" />
 
     <Spinner
         android:id="@+id/spinner"

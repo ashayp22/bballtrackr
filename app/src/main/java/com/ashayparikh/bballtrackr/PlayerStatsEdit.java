@@ -114,6 +114,11 @@ public class PlayerStatsEdit extends AppCompatActivity implements OnItemSelected
 
     }
 
+    public void ClearStats(View view) {
+        db.ClearPlayerStats(currentPlayer);
+    }
+
+
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }

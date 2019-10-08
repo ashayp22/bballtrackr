@@ -103,6 +103,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         UpdateTable(data);
     }
 
+    //clears a players stats
+    public boolean ClearPlayerStats(String playerName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        String[] data = getPlayerData(playerName);
+
+        contentValues.put(COLS[0], playerName);
+        contentValues.put(COLS[1], data[1]);
+
+        for (int i = 2; i < 9; i++) {
+            contentValues.put(COLS[i],"0");
+        }
+
+        db.update(TABLE_NAME, contentValues, "NAME = ?",new String[] { playerName });
+        return true;
+    }
+
 
     //update a players data
     public boolean UpdateTable(String[] data) {

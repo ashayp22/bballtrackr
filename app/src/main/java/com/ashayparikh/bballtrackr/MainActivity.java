@@ -22,11 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseHelper db;
 
-    String coachNameT = "Cortez";
-    String teamNameT = "Cougars";
-
-    TextView coachName, teamName;
-
     //Arraylist players that will be appended to the players dropdown
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         db = new DatabaseHelper(this);
-
-        //clear player data, team stats
-        coachName = (TextView)findViewById(R.id.coachName);
-        teamName = (TextView)findViewById(R.id.teamName);
-
-        InitViews();
     }
 
 
@@ -61,14 +50,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void InitViews()
-    {
-        coachName.setText("Coach " + coachNameT);
-        teamName.setText("Team " + teamNameT);
-
-        //teamLogo.setImageResource(IMAGE);
-    }
-
     public void NewGame(View view)
     {
         Intent intent = new Intent(this, Players.class);
@@ -79,12 +60,6 @@ public class MainActivity extends AppCompatActivity {
     public void ViewStats(View view)
     {
         Intent intent = new Intent(this, PlayerStats.class);
-        startActivity(intent);
-    }
-
-    public void Teams(View view)
-    {
-        Intent intent = new Intent(this, TeamStats.class);
         startActivity(intent);
     }
 
